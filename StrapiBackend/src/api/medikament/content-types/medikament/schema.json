@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medikaments",
+  "info": {
+    "singularName": "medikament",
+    "pluralName": "medikaments",
+    "displayName": "Medikament",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MedikamentenName": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
