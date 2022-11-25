@@ -41,6 +41,7 @@ jobs:
         with:
           name: python-app
           path: |
+            ./WebScraper
             !venv/
 
   deploy:
@@ -54,8 +55,8 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: main
-          path: ./
+          name: python-app
+          path: ./WebScraper
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
