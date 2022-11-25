@@ -3,7 +3,6 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
-
 pymongo==4.3.3
 requests==2.28.1
 beautifulsoup4==4.11.1
