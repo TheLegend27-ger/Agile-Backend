@@ -4,8 +4,7 @@ import pymongo
 from bs4 import BeautifulSoup
 import lxml
 
-import certifi
-ca = certifi.where()
+
 client = pymongo.MongoClient("mongodb+srv://Cluster2User:gPId3Gm4a0I9icN5@agile2cluster.bxvcw4l.mongodb.net/?retryWrites=true&w=majority",tls=True, tlsAllowInvalidCertificates=True)
 db = client.test
 mydb = client["Test"]
