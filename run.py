@@ -10,7 +10,6 @@ import lxml
 client = pymongo.MongoClient("mongodb+srv://Cluster2User:gPId3Gm4a0I9icN5@agile2cluster.bxvcw4l.mongodb.net/?retryWrites=true&w=majority",tls=True, tlsAllowInvalidCertificates=True)
 
 #Create DataBase if not already there
-db = client.test
 mydb = client["Test"]
 
 #Create collection
@@ -36,7 +35,7 @@ for n, product in enumerate(parent.find_all('Product')):
         products.append(dict)
 
 json_data = json.dumps(products, indent = 2)
-print(mycol.insert_many(products))
+mycol.insert_many(products)
 
 
 
