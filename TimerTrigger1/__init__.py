@@ -11,13 +11,17 @@ def main(mytimer: func.TimerRequest) -> None:
         tzinfo=datetime.timezone.utc).isoformat()
 
 
-
+    #Create connection String
     client = pymongo.MongoClient("mongodb+srv://Cluster2User:gPId3Gm4a0I9icN5@agile2cluster.bxvcw4l.mongodb.net/?retryWrites=true&w=majority",tls=True, tlsAllowInvalidCertificates=True)
+    
+    #Create DataBase if not already there
     mydb = client["Test"]
+    #Create collection
     mycol = mydb["CollectionTest"]
+    #Delete all entries in Collection
     mycol.drop()
 
-
+    #Get HTML/XML page from web
     response = requests.get('https://www.hpra.ie/img/uploaded/swedocuments/latestVMlist.xml')
     print("download done")
     data = response.content
@@ -34,7 +38,7 @@ def main(mytimer: func.TimerRequest) -> None:
             products.append(dict)
 
     json_data = json.dumps(products, indent = 2)
-    print(mycol.insert_many(products))
+    mycol.insert_many(products)
 
 
     if mytimer.past_due:
